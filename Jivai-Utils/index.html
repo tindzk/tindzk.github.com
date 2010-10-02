@@ -25,7 +25,7 @@
 
 	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
 	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Features">Features</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Features">Features</a><br /></li><li><a href="#Getting Started">Getting Started</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
 	</ul>
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
@@ -44,7 +44,45 @@
 			<li>Prototype generator</li><li>Dependency resolver</li><li>Build system</li>
 		</ul>
 
-		<h2><a href="#License" name="License">License</a></h2>
+		<h2><a href="#Getting Started" name="Getting Started">Getting Started</a></h2>
+
+		
+
+		<h3>Requirements</h3>
+
+			Jivai-Utils depends on Jivai. In this tutorial the Jivai repository is placed in the same directory as Jivai-Utils&#039;. <h3>Installation</h3>
+
+			<script type="syntaxhighlighter" class="brush: shell"><![CDATA[			git clone git://github.com/tindzk/Jivai-Utils.git
+			cd Jivai-Utils
+			make]]></script><h3>Usage</h3>
+
+			<p>
+			Let&#039;s try to build the httpd application from the Jivai <span class="path">examples/</span> directory:
+		</p> <script type="syntaxhighlighter" class="brush: shell"><![CDATA[			cd ../Jivai/examples
+			mkdir -p build/Jivai
+			../../Jivai-Utils/jutils.bin \
+				build                    \
+				output=build/httpd.bin   \
+				main=httpd.c             \
+				include=../src           \
+				map=.:build              \
+				map=../src:build/Jivai   \
+				inclhdr=config.h         \
+				link=@bfd                \
+				dbgsym=yes               \
+				optimlevel=0]]></script><h3>Performance</h3>
+
+			<p>
+			In contrast to the shipped <span class="path">Makefile</span>, this will only compile the files which are actually needed. If a file changes, it will only recompile those files which depend on the changed one rendering the build process much faster.
+		</p> <p>
+			This feature compares the source file&#039;s date with the compiled output. Therefore, it&#039;s possible to &quot;fake&quot; a file change by doing: 
+		</p> <script type="syntaxhighlighter" class="brush: shell"><![CDATA[			touch ../src/HTTP/Server.c]]></script> <p>
+			And then execute the above <span class="path">jutils.bin</span> command. As you can see, only a subset of the initially built files get recompiled.
+		</p><h3>Dependency tree</h3>
+
+			<p>
+			Sometimes it&#039;s useful to get an overview of your project&#039;s overall complexity. Jivai-Utils supports printing the whole dependency tree. Just replace replace the <span class="keyword">build</span> with <span class="keyword">deptree</span> in the above command.
+		</p><h2><a href="#License" name="License">License</a></h2>
 
 		<p>
 			Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.

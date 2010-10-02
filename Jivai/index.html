@@ -25,7 +25,7 @@
 
 	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
 	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Requirements">Requirements</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Getting Started">Getting Started</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
 	</ul>
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
@@ -49,6 +49,22 @@
 		</ul> Features include: <ul>
 			<li>Performance</li><li>Consistency</li><li>Exception support</li><li>Object-oriented code</li><li>Debugging facilities</li><li>Fine-tunable</li><li>Low footprint</li><li>Linux-only</li>
 		</ul>
+
+		<h2><a href="#Requirements" name="Requirements">Requirements</a></h2>
+
+		<ul>
+			<li>Git</li><li>Clang</li><li>Linux 2.6</li>
+		</ul>
+
+		<h2><a href="#Installation" name="Installation">Installation</a></h2>
+
+		First make sure the mentioned requirements are met. Then checkout the code: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		git clone git://github.com/tindzk/Jivai.git]]></script>
+
+		<h2><a href="#Getting Started" name="Getting Started">Getting Started</a></h2>
+
+		<script type="syntaxhighlighter" class="brush: shell"><![CDATA[		cd Jivai/examples/
+		mkdir build]]></script> Now you&#039;re ready to try out the sample programs. Let&#039;s compile the HTTP server: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		make httpd
+		build/httpd.bin]]></script> Then point you browser to <a href="http://localhost:8080/">localhost:8080</a>.
 
 		<h2><a href="#License" name="License">License</a></h2>
 
