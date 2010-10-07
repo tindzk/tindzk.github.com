@@ -25,12 +25,12 @@
 
 	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
 	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Requirements">Requirements</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Getting Started">Getting Started</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Requirements">Requirements</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Getting Started">Getting Started</a><br /></li><li><a href="#Providers">Providers</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
 	</ul>
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-		<p>podfm is an extensible podcatcher for the console. It provides the possibility to write provider-specific plugins. This is especially useful when providers offer additional content such as transcriptions which general-purpose podcatchers usually ignore. </p> <p>Currently the only supported provider is <a href="http://www.rfi.fr/">RFI</a>. An Atom/RSS plugin is planned to support a wider range of providers.</p>
+		podfm is an extensible podcatcher for the console. It provides the possibility to write provider-specific plugins. This is especially useful when providers offer additional content such as transcriptions which general-purpose podcatchers usually ignore. 
 
 		<h2><a href="#Requirements" name="Requirements">Requirements</a></h2>
 
@@ -48,12 +48,36 @@
 			second subscription
 
 		providerId2:
-			...]]></script> As for RFI, the file may look like: <script type="syntaxhighlighter" class="brush: c"><![CDATA[		rfi:
-			Podcast_DANSE
-			Podcast_SAV
-			Podcast_VEN
-			journalFrancaisFacile
-			rss_apprendre_francais]]></script> To synchronize, just run: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		./podfm.bin /mnt/ipod]]></script> Consequently, the cache file as well as the podcasts will be stored in the given path.
+			...]]></script> 
+
+		<h3>RFI plugin</h3>
+
+			As for RFI, the file may look like: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			rfi:
+				Podcast_DANSE
+				Podcast_SAV
+				Podcast_VEN
+				journalFrancaisFacile
+				rss_apprendre_francais]]></script> <p class="note">
+
+		This layout stores the selected podcasts in one directory, <span class="path">rfi</span>. If this isn&#039;t desired, you may also break them up into multiple sections: <script type="syntaxhighlighter" class="brush: c"><![CDATA[				rfi: RFI Group 1
+					Podcast_DANSE
+					Podcast_SAV
+
+				rfi: RFI Group 2
+					Podcast_VEN]]></script> If you don&#039;t label each section differently, the separation won&#039;t have any effect.</p><h3>RSS plugin</h3>
+
+			The RSS plugin needs to be used like this: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			rss: ecoute
+				url: http://www.ecoute.de/podcast/rss.xml
+
+			rss: tagesschau
+				url: http://www.tagesschau.de/export/podcast/tagesthemen/
+				url: http://www.tagesschau.de/export/podcast/tagesschau/]]></script> <p class="warning">
+
+		<span class="keyword">url</span> is necessary because the configuration parser will strip <span class="keyword">http</span> from the URL when nothing else is prepended.</p><h3>Synchronize</h3>
+
+			To synchronize, just run: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[			./podfm.bin /mnt/ipod]]></script> Consequently, the cache file as well as the podcasts will be stored in the given path.<h2><a href="#Providers" name="Providers">Providers</a></h2>
+
+		Currently these providers are supported: <ul><li><a href="http://www.rfi.fr/">RFI</a> (<span class="keyword">rfi</span>)</li><li>RSS (<span class="keyword">rss</span>)</li></ul> The RSS plugin only exists to cover those providers which aren&#039;t supported by any specific plugin.
 
 		<h2><a href="#License" name="License">License</a></h2>
 
