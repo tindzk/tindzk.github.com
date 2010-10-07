@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE=http://tindzk.github.com
+BASE=..
 
 cp ../docsgen/tpl/style.css style.css
 

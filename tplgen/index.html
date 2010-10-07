@@ -5,19 +5,19 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/XRegExp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shCore.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushCpp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/XRegExp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushBash.js"></script>
 
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript">
 		 SyntaxHighlighter.all()
 	</script>
 
-	<link href="http://tindzk.github.com/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -53,29 +53,19 @@
 			dir=tpl/Default  \
 			ext=.html        \
 			out=src/Templates/Default.c]]></script> <p class="warning">
-			This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.
-		</p> 
+
+		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.</p> 
 
 		<h3>Creating the Header</h3>
 
-			<p>
-			tplgen doesn&#039;t create any C header files. These have to be created manually. <span class="path">Default.c</span> will look for a header file named <span class="path">Default.h</span>.
-		</p> <p>
-			Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: 
-		</p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import <String.h>
+			<p>tplgen doesn&#039;t create any C header files. These have to be created manually. <span class="path">Default.c</span> will look for a header file named <span class="path">Default.h</span>.</p> <p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import <String.h>
 			#import "TemplateInterface.h"
 
 			TemplateInterface Templates_Default;]]></script> <p class="note">
-			<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.
-		</p><h3>Templates without Interface</h3>
 
-			<p>
-			If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:
-		</p> <ul>
-			<li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li>
-		</ul> <p>
-			Rather than accessing the template structure, you can now access the functions directly. 
-		</p><h3>See also</h3>
+		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.</p><h3>Templates without Interface</h3>
+
+			<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul><li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li></ul> <p>Rather than accessing the template structure, you can now access the functions directly. </p><h3>See also</h3>
 
 			Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#Performance" name="Performance">Performance</a></h2>
 
@@ -83,21 +73,11 @@
 
 		<h2><a href="#License" name="License">License</a></h2>
 
-		<p>
-			Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.
-		</p> <p>
-			You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl</a>
-		</p> <p>
-			Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-		</p> <p>
-			See the Licence for the specific language governing permissions and limitations under the Licence. 
-		</p>
+		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul>
-			<li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
-		</ul>
+		<ul><li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li></ul>
 
 		<h2><a href="#Contact" name="Contact">Contact</a></h2>
 

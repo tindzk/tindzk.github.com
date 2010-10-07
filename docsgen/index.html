@@ -5,19 +5,19 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/XRegExp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shCore.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushCpp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/XRegExp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushBash.js"></script>
 
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript">
 		 SyntaxHighlighter.all()
 	</script>
 
-	<link href="http://tindzk.github.com/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -25,16 +25,12 @@
 
 	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
 	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Usage">Usage</a><br /></li><li><a href="#Commands">Commands</a><br /></li><li><a href="#Example">Example</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Usage">Usage</a><br /></li><li><a href="#Commands">Commands</a><br /></li><li><a href="#Example">Example</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Donate">Donate</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
 	</ul>
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-		<p>
-			<i>docsgen</i> is a frontend for the <a href="http://github.com/tindzk/Jivai/blob/master/src/Typography.c">Typography</a> markup.
-		</p> <p>
-			Its purpose is to create well-formatted documents without much effort. Therefore, docsgen offers various features which facilitate styling and structuring texts. 
-		</p>
+		<p><i>docsgen</i> is a frontend for the <a href="http://github.com/tindzk/Jivai/blob/master/src/Typography.c">Typography</a> markup.</p> <p>Its purpose is to create well-formatted documents without much effort. Therefore, docsgen offers various features which facilitate styling and structuring texts. </p>
 
 		<h2><a href="#Installation" name="Installation">Installation</a></h2>
 
@@ -42,9 +38,7 @@
 
 		<h3>Requirements</h3>
 
-			For tplgen to compile, make sure to have these prerequisites installed: <ul>
-			<li>Jivai</li><li>Jivai-Utils</li><li>tplgen</li>
-		</ul><h3>Checkout</h3>
+			For tplgen to compile, make sure to have these prerequisites installed: <ul><li>Jivai</li><li>Jivai-Utils</li><li>tplgen</li></ul><h3>Checkout</h3>
 
 			<script type="syntaxhighlighter" class="brush: shell"><![CDATA[			git clone git://github.com/docsgen/docsgen.git]]></script><h3>Compile</h3>
 
@@ -54,11 +48,7 @@
 
 		<h2><a href="#Commands" name="Commands">Commands</a></h2>
 
-		<p>
-			A document written in Typography is basically a sequence of (nested) commands surrounded by text. Commands are comparable to functions in programming languages. Hence, some commands may even accept options. 
-		</p> <p>
-			A typical command is used like this: <span class="keyword">.cmd{value}</span>. Parameters are generally optional. They can be specified using square brackets: <span class="keyword">.cmd[param]{value}</span>.
-		</p> 
+		<p>A document written in Typography is basically a sequence of (nested) commands surrounded by text. Commands are comparable to functions in programming languages. Hence, some commands may even accept options. </p> <p>A typical command is used like this: <span class="keyword">.cmd{value}</span>. Parameters are generally optional. They can be specified using square brackets: <span class="keyword">.cmd[param]{value}</span>.</p> 
 
 		<h3>Meta</h3>
 
@@ -66,17 +56,15 @@
 				.title{Document Title}
 			}]]></script><h3>Chapters and Sections</h3>
 
-			Like <a href="#meta">meta</a>, <span class="keyword">chapter</span> is another top-level command. Chapter are automatically added to the table of contents. Sometimes it&#039;s desired to subdivide the contents of a chapter. Therefore, chapters may also contain sections (<span class="keyword">.section{...}</span>). However, the generated table of contents won&#039;t cover any links to sections.<h3>Style</h3>
+			Like <a href="#">meta</a>, <span class="keyword">chapter</span> is another top-level command. Chapter are automatically added to the table of contents. Sometimes it&#039;s desired to subdivide the contents of a chapter. Therefore, chapters may also contain sections (<span class="keyword">.section{...}</span>). However, the generated table of contents won&#039;t cover any links to sections.<h3>Style</h3>
 
-			The following styles are supported: <ul>
-			<li>b (<b>bold</b>)</li><li>i (<i>italic</i>)</li><li>class (<span class="class">ClassName</span>)</li><li>func (<span class="function">main</span>)</li><li>var (<span class="variable">var</span>)</li><li>macro (<span class="macro">macro</span>)</li><li>term (<span class="term">1 + 2</span>)</li><li>keyword (<span class="keyword">docsgen</span>)</li><li>path (<span class="path">/root</span>)</li><li>number (<span class="number">8080</span>)</li>
-		</ul> Styles only format the given text, i.e. they don&#039;t require any options.<h3>Blocks</h3>
+			The following styles are supported: <ul><li>b (<b>bold</b>)</li><li>i (<i>italic</i>)</li><li>class (<span class="class">ClassName</span>)</li><li>func (<span class="function">main</span>)</li><li>var (<span class="variable">var</span>)</li><li>macro (<span class="macro">macro</span>)</li><li>term (<span class="term">1 + 2</span>)</li><li>keyword (<span class="keyword">docsgen</span>)</li><li>path (<span class="path">/root</span>)</li><li>number (<span class="number">8080</span>)</li></ul> Styles only format the given text, i.e. they don&#039;t require any options.<h3>Blocks</h3>
 
 			docsgen supports <span class="keyword">blocks</span>. Their purpose is to inline texts. Notes (<span class="keyword">note</span>) and warnings (<span class="keyword">warning</span>) are supported: <p class="note">
-			Note block 
-		</p> <p class="warning">
-			Warning block 
-		</p><h3>Lists</h3>
+
+		Note block </p> <p class="warning">
+
+		Warning block </p><h3>Lists</h3>
 
 			A list is initialized using the <span class="keyword">list</span> command. Within a list, there cannot be other elements than <span class="keyword">item</span>s: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.list {
 				.item{Item 1}
@@ -85,9 +73,7 @@
 
 			docsgen does not detect paragraphs automatically. To force a paragraph, the corresponding text needs to be surrounded by a <span class="keyword">p</span> command.<h3>Syntax highlighting</h3>
 
-			docsgen supports highlighting of code and shell commands: <ul>
-			<li>command: Shell command(s)</li><li>code: C, C++ code</li>
-		</ul> For example, this <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.command {
+			docsgen supports highlighting of code and shell commands: <ul><li>command: Shell command(s)</li><li>code: C, C++ code</li></ul> For example, this <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.command {
 				ls -lah
 			}
 
@@ -99,12 +85,10 @@
 				return EXIT_SUCCESS;
 			}]]></script><h3>Anchors</h3>
 
-			Anchors are invisible markers which can be set throughout the whole document and jumped to. An anchor needs to be initialized using the <span class="keyword">anchor</span> command. <a name="jump"></a> A link pointing to an anchor can be generated using <span class="keyword">jump</span>, whereas its value, the anchor name, will be taken as caption if no option is set.<h3>Links</h3>
+			Anchors are invisible markers which can be set throughout the whole document and jumped to. An anchor needs to be initialized using the <span class="keyword">anchor</span> command. <a name="jump"></a> A link pointing to an anchor can be generated using <span class="keyword">jump</span>.<h3>Links</h3>
 
-			The following types of links are supported: <ul>
-			<li><i>mail</i>: E-mail address (<a href="mailto:user@example.com">user@example.com</a>)</li><li><i>url</i>: URL (<a href="http://www.example.com/">http://www.example.com/</a>)</li>
-		</ul> The usage of a link is similar to an <a href="#jump">anchor jumpers'</a>: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.url[Google]{http://www.google.com/}
-			.url[John Smith]{john@example.com}]]></script><h2><a href="#Example" name="Example">Example</a></h2>
+			The following types of links are supported: <ul><li><i>mail</i>: E-mail address (<a href="mailto:user@example.com">user@example.com</a>)</li><li><i>url</i>: URL (<a href="http://www.example.com/">example.com</a>)</li></ul> The usage of a link is similar to an <a href="#jump">anchor jumpers&#039;</a>: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.url[http://www.google.com/\]{Google}
+			.url[john@example.com]{John Smith}]]></script><h2><a href="#Example" name="Example">Example</a></h2>
 
 		A sample document may look like: <script type="syntaxhighlighter" class="brush: c"><![CDATA[		.meta {
 			.title{Sample Document}
@@ -122,21 +106,15 @@
 
 		<h2><a href="#License" name="License">License</a></h2>
 
-		<p>
-			Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.
-		</p> <p>
-			You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl</a>
-		</p> <p>
-			Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-		</p> <p>
-			See the Licence for the specific language governing permissions and limitations under the Licence. 
-		</p>
+		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul>
-			<li><a href="http://github.com/tindzk/docsgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
-		</ul>
+		<ul><li><a href="Browse source">http://github.com/tindzk/docsgen</a></li><li><a href="GitHub account">http://github.com/tindzk</a></li></ul>
+
+		<h2><a href="#Donate" name="Donate">Donate</a></h2>
+
+		<a href="http://flattr.com/thing/69450/podfm-extensible-podcast-aggregator"><img src="http://api.flattr.com/button/button-compact-static-100x17.png" /></a>
 
 		<h2><a href="#Contact" name="Contact">Contact</a></h2>
 

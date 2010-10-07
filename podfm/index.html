@@ -5,19 +5,19 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/XRegExp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shCore.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushCpp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/XRegExp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushBash.js"></script>
 
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript">
 		 SyntaxHighlighter.all()
 	</script>
 
-	<link href="http://tindzk.github.com/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -30,17 +30,11 @@
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-		<p>
-			podfm is an extensible podcatcher for the console. It provides the possibility to write provider-specific plugins. This is especially useful when providers offer additional content such as transcriptions which general-purpose podcatchers usually ignore. 
-		</p> <p>
-			Currently the only supported provider is <a href="http://www.rfi.fr/">RFI</a>. An Atom/RSS plugin is planned to support a wider range of providers.
-		</p>
+		<p>podfm is an extensible podcatcher for the console. It provides the possibility to write provider-specific plugins. This is especially useful when providers offer additional content such as transcriptions which general-purpose podcatchers usually ignore. </p> <p>Currently the only supported provider is <a href="http://www.rfi.fr/">RFI</a>. An Atom/RSS plugin is planned to support a wider range of providers.</p>
 
 		<h2><a href="#Requirements" name="Requirements">Requirements</a></h2>
 
-		<ul>
-			<li>Jivai</li><li>Jivai-Utils</li>
-		</ul>
+		<ul><li><a href="../Jivai">Jivai</a></li><li><a href="../Jivai-Utils">Jivai-Utils</a></li></ul>
 
 		<h2><a href="#Installation" name="Installation">Installation</a></h2>
 
@@ -49,13 +43,7 @@
 
 		<h2><a href="#Getting Started" name="Getting Started">Getting Started</a></h2>
 
-		<p>
-			podfm can download files locally to disk or to an external device like a media player. Therefore, podfm maintains a cache file keeping track of already downloaded podcasts. 
-		</p> <p>
-			By default, the configuration path points to the current directory. However, this can be configured in <span class="path">config.h</span>. But you can also pass a different path via parameter.
-		</p> <p>
-			The configuration path must contain a file called <span class="path">subscriptions.yml</span> with the following layout:
-		</p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[		providerId1:
+		<p>podfm can download files locally to disk or to an external device like a media player. Therefore, podfm maintains a cache file keeping track of already downloaded podcasts. </p> <p>By default, the configuration path points to the current directory. However, this can be configured in <span class="path">config.h</span>. But you can also pass a different path via parameter.</p> <p>The configuration path must contain a file called <span class="path">subscriptions.yml</span> with the following layout:</p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[		providerId1:
 			first subscription
 			second subscription
 
@@ -69,21 +57,11 @@
 
 		<h2><a href="#License" name="License">License</a></h2>
 
-		<p>
-			Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.
-		</p> <p>
-			You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl</a>
-		</p> <p>
-			Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-		</p> <p>
-			See the Licence for the specific language governing permissions and limitations under the Licence. 
-		</p>
+		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul>
-			<li><a href="http://github.com/tindzk/podfm">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
-		</ul>
+		<ul><li><a href="http://github.com/tindzk/podfm">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li></ul>
 
 		<h2><a href="#Contact" name="Contact">Contact</a></h2>
 

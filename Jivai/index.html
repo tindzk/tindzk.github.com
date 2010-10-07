@@ -5,19 +5,19 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/XRegExp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shCore.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushCpp.js"></script>
-	<script type="text/javascript" src="http://tindzk.github.com/syntaxhighlighter/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/XRegExp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushBash.js"></script>
 
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
-	<link href="http://tindzk.github.com/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
+	<link href="../syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript">
 		 SyntaxHighlighter.all()
 	</script>
 
-	<link href="http://tindzk.github.com/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -25,36 +25,16 @@
 
 	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
 	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Requirements">Requirements</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Getting Started">Getting Started</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Requirements">Requirements</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Getting Started">Getting Started</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Donate">Donate</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
 	</ul>
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-		<p>
-			Jivai aims to be a modern libc using recent programming techniques. Hence, it does not implement the POSIX specification as it follows a completely different approach. 
-		</p> <p>
-			Although Jivai is written in C, some design decisions had to be made in order to achieve a certain object-orientation as well as consistency. 
-		</p> <p>
-			Another strength of Jivai is in its performance: Many modules can be fine-tuned to gain speed improvements or to act differently in production environments. The fact that Jivai is Linux-only makes it possible to prevent slow workarounds and unnecessary compatibility code. Furthermore, some modules were optimized for Linux unique capabilities, e.g. leading to a reduction of system calls. 
-		</p> <p>
-			Jivai facilitates debugging: There is an advanced exception infrastructure which is being used throughout most modules. Critical errors don&#039;t get ignored any more in case you forgot to check some return values. Moreover, it is possible to obtain a call trace whenever an exception occurs. 
-		</p> <p>
-			There are straightforward implementations of data structures like linked lists, strings and arrays. Adding elements will automatically allocate more memory if necessary. You no longer need to scatter routines for memory allocation over your code. However, Jivai still offers the choice to control the memory allocation yourself. This might come in handy if the implemented techniques are too generic for your purposes. 
-		</p> <p>
-			As Jivai uses a special C variant, Clang is the preferred compiler. In the course of producing object-oriented code, the code also makes use of less common features such as closures which are not supported natively by any other compiler. 
-		</p> <p>
-			Unfortunately, currently Jivai still requires a POSIX-compatible libc. Luckily, it only requires a minimal subset, making it possible to use lightweight libc&#039;s like the diet libc. 
-		</p> Jivai has been successfully used for the following areas so far: <ul>
-			<li>Network programming</li><li>Terminal applications</li><li>Event-driven programming</li>
-		</ul> Features include: <ul>
-			<li>Performance</li><li>Consistency</li><li>Exception support</li><li>Object-oriented code</li><li>Debugging facilities</li><li>Fine-tunable</li><li>Low footprint</li><li>Linux-only</li>
-		</ul>
+		<p>Jivai aims to be a modern libc using recent programming techniques. Hence, it does not implement the POSIX specification as it follows a completely different approach. </p> <p>Although Jivai is written in C, some design decisions had to be made in order to achieve a certain object-orientation as well as consistency. </p> <p>Another strength of Jivai is in its performance: Many modules can be fine-tuned to gain speed improvements or to act differently in production environments. The fact that Jivai is Linux-only makes it possible to prevent slow workarounds and unnecessary compatibility code. Furthermore, some modules were optimized for Linux unique capabilities, e.g. leading to a reduction of system calls. </p> <p>Jivai facilitates debugging: There is an advanced exception infrastructure which is being used throughout most modules. Critical errors don&#039;t get ignored any more in case you forgot to check some return values. Moreover, it is possible to obtain a call trace whenever an exception occurs. </p> <p>There are straightforward implementations of data structures like linked lists, strings and arrays. Adding elements will automatically allocate more memory if necessary. You no longer need to scatter routines for memory allocation over your code. However, Jivai still offers the choice to control the memory allocation yourself. This might come in handy if the implemented techniques are too generic for your purposes. </p> <p>As Jivai uses a special C variant, Clang is the preferred compiler. In the course of producing object-oriented code, the code also makes use of less common features such as closures which are not supported natively by any other compiler. </p> <p>Unfortunately, currently Jivai still requires a POSIX-compatible libc. Luckily, it only requires a minimal subset, making it possible to use lightweight libc&#039;s like the diet libc. </p> Jivai has been successfully used for the following areas so far: <ul><li>Network programming</li><li>Terminal applications</li><li>Event-driven programming</li></ul> Features include: <ul><li>Performance</li><li>Consistency</li><li>Exception support</li><li>Object-oriented code</li><li>Debugging facilities</li><li>Fine-tunable</li><li>Low footprint</li><li>Linux-only</li></ul>
 
 		<h2><a href="#Requirements" name="Requirements">Requirements</a></h2>
 
-		<ul>
-			<li>Git</li><li>Clang</li><li>Linux 2.6</li>
-		</ul>
+		<ul><li>Git</li><li>Clang</li><li>Linux 2.6</li></ul>
 
 		<h2><a href="#Installation" name="Installation">Installation</a></h2>
 
@@ -68,21 +48,15 @@
 
 		<h2><a href="#License" name="License">License</a></h2>
 
-		<p>
-			Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.
-		</p> <p>
-			You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl</a>
-		</p> <p>
-			Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-		</p> <p>
-			See the Licence for the specific language governing permissions and limitations under the Licence. 
-		</p>
+		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul>
-			<li><a href="http://github.com/tindzk/Jivai">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
-		</ul>
+		<ul><li><a href="http://github.com/tindzk/Jivai">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li></ul>
+
+		<h2><a href="#Donate" name="Donate">Donate</a></h2>
+
+		<a href="http://flattr.com/thing/69446/Jivai-Object-oriented-framework-for-C-development"><img src="http://api.flattr.com/button/button-compact-static-100x17.png" /></a>
 
 		<h2><a href="#Contact" name="Contact">Contact</a></h2>
 
