@@ -60,7 +60,9 @@
 				inclhdr=config.h         \
 				link=@bfd                \
 				dbgsym=yes               \
-				optimlevel=0]]></script><h3>Performance</h3>
+				optimlevel=0]]></script><h3>Manually adding files</h3>
+
+			If certain files are not covered by <span class="keyword">#import</span>s, you can add them manually using the <span class="keyword">add</span> parameter. It also has rudimentary support for wildcards, e.g. <span class="keyword">add=src/Providers/*.c</span> will add all <span class="path">.c</span> files (and their dependencies) within <span class="path">src/Providers</span>.<h3>Performance</h3>
 
 			<p>In contrast to the shipped <span class="path">Makefile</span>, this will only compile the files which are actually needed. If a file changes, it will only recompile those files which depend on the changed one rendering the build process much faster.</p> <p>This feature compares the source file&#039;s date with the compiled output. Therefore, it&#039;s possible to &quot;fake&quot; a file change by doing: </p> <script type="syntaxhighlighter" class="brush: shell"><![CDATA[			touch ../src/HTTP/Server.c]]></script> <p>And then execute the above <span class="path">jutils.bin</span> command. As you can see, only a subset of the initially built files get recompiled.</p><h3>Dependency tree</h3>
 
