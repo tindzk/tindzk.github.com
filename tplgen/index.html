@@ -52,14 +52,17 @@
 			name=Default     \
 			dir=tpl/Default  \
 			ext=.html        \
-			out=src/Templates/Default.c]]></script> <p class="warning">
+			out=src/Templates/Default]]></script> <p class="warning">
 
 		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.</p> 
 
 		<h3>Creating the Header</h3>
 
-			<p>tplgen doesn&#039;t create any C header files. These have to be created manually. <span class="path">Default.c</span> will look for a header file named <span class="path">Default.h</span>.</p> <p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import <String.h>
-			#import "TemplateInterface.h"
+			<p>Although tplgen already creates a header file automatically, each template requires a structure containing its member variables. This is usually done in the file <span class="path">&lt;TemplateName&gt;.private.h</span> which is imported by <span class="path">&lt;TemplateName&gt;.h</span>. <p class="note">
+
+		You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. </p></p><h3>Templates with Interface</h3>
+
+			<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import "TemplateInterface.h"
 
 			TemplateInterface Templates_Default;]]></script> <p class="note">
 
