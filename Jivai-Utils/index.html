@@ -28,7 +28,7 @@
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-		<p>Jivai-Utils is a set of tools easing the development with Jivai. </p> <p>The main strength is its build system which resolves all dependencies automatically. It is different from GNU Autoconf by eliminating the need for bootstrapping. In contrast to Autoconf, Jivai-Utils does not rely on any external applications. Therefore, it runs much faster. </p> <p>Jivai-Utils enables you to build whole applications with only one command! They do not even need to use the Jivai library. As long as the dependencies are specified properly, it will work fine. </p>
+		  <p>Jivai-Utils is a set of tools easing the development with Jivai. </p><p>The main strength is its build system which resolves all dependencies automatically. It is different from GNU Autoconf by eliminating the need for bootstrapping. In contrast to Autoconf, Jivai-Utils does not rely on any external applications. Therefore, it runs much faster. </p><p>Jivai-Utils enables you to build whole applications with only one command! They do not even need to use the Jivai library. As long as the dependencies are specified properly, it will work fine. </p>
 
 		<h2><a href="#Features" name="Features">Features</a></h2>
 
@@ -36,7 +36,7 @@
 
 		<h2><a href="#Getting Started" name="Getting Started">Getting Started</a></h2>
 
-		
+		     
 
 		<h3>Requirements</h3>
 
@@ -46,7 +46,7 @@
 			cd Jivai-Utils
 			make]]></script><h3>Usage</h3>
 
-			<p>Let&#039;s try to build the httpd application from the Jivai <span class="path">examples/</span> directory:</p> <script type="syntaxhighlighter" class="brush: shell"><![CDATA[			cd ../Jivai/examples
+			 <p>Let&#039;s try to build the httpd application from the Jivai <span class="path">examples/</span> directory:</p><script type="syntaxhighlighter" class="brush: shell"><![CDATA[			cd ../Jivai/examples
 			mkdir -p build/Jivai
 			../../Jivai-Utils/jutils.bin \
 				build                    \
@@ -60,13 +60,13 @@
 				dbgsym=yes               \
 				optimlevel=0]]></script><h3>Manually adding files</h3>
 
-			If certain files are not covered by <span class="keyword">#import</span>s, you can add them manually using the <span class="keyword">add</span> parameter. It also has rudimentary support for wildcards, e.g. <span class="keyword">add=src/Providers/*.c</span> will add all <span class="path">.c</span> files (and their dependencies) within <span class="path">src/Providers</span>.<h3>Performance</h3>
+			If certain files are not covered by s, you can add them manually using the  parameter. It also has rudimentary support for wildcards, e.g.  will add all  files (and their dependencies) within .<span class="keyword">#import</span><span class="keyword">add</span><span class="keyword">add=src/Providers/*.c</span><span class="path">.c</span><span class="path">src/Providers</span><h3>Performance</h3>
 
-			<p>In contrast to the shipped <span class="path">Makefile</span>, this will only compile the files which are actually needed. If a file changes, it will only recompile those files which depend on the changed one rendering the build process much faster.</p> <p>This feature compares the source file&#039;s date with the compiled output. Therefore, it&#039;s possible to &quot;fake&quot; a file change by doing: </p> <script type="syntaxhighlighter" class="brush: shell"><![CDATA[			touch ../src/HTTP/Server.c]]></script> <p>And then execute the above <span class="path">jutils.bin</span> command. As you can see, only a subset of the initially built files get recompiled.</p><h3>Dependency tree</h3>
+			   <p>In contrast to the shipped <span class="path">Makefile</span>, this will only compile the files which are actually needed. If a file changes, it will only recompile those files which depend on the changed one rendering the build process much faster.</p><p>This feature compares the source file&#039;s date with the compiled output. Therefore, it&#039;s possible to &quot;fake&quot; a file change by doing: </p><script type="syntaxhighlighter" class="brush: shell"><![CDATA[			touch ../src/HTTP/Server.c]]></script><p>And then execute the above <span class="path">jutils.bin</span> command. As you can see, only a subset of the initially built files get recompiled.</p><h3>Dependency tree</h3>
 
 			<p>Sometimes it&#039;s useful to get an overview of your project&#039;s overall complexity. Jivai-Utils supports printing the whole dependency tree. Just replace replace the <span class="keyword">build</span> with <span class="keyword">deptree</span> in the above command.</p><h2><a href="#License" name="License">License</a></h2>
 
-		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
+		   <p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p><p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p><p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p><p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
