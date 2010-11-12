@@ -28,31 +28,31 @@
 
 	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-		 is a lightweight template system. It can be used to create interactive websites written in C. tplgen doesn&#039;t require complex configuration. All options are passed via command line parameters. Templates are written in a simple markup. tplgen compiles them to valid C code. Templates can contain variables, loops, comparisons and even sub-routines. It&#039;s also possible to nest templates and to call any function which are defined somewhere else in the code.<i>tplgen</i>
+		<i>tplgen</i> is a lightweight template system. It can be used to create interactive websites written in C. tplgen doesn&#039;t require complex configuration. All options are passed via command line parameters. Templates are written in a simple markup. tplgen compiles them to valid C code. Templates can contain variables, loops, comparisons and even sub-routines. It&#039;s also possible to nest templates and to call any function which are defined somewhere else in the code.
 
 		<h2><a href="#Installation" name="Installation">Installation</a></h2>
 
-		First make sure you have  and  installed. Then, execute: <a href="http://tindzk.github.com/Jivai/">Jivai</a><a href="http://tindzk.github.com/Jivai-Utils/">Jivai-Utils</a><script type="syntaxhighlighter" class="brush: shell"><![CDATA[		git clone git://github.com/tindzk/tplgen.git
+		First make sure you have <a href="http://tindzk.github.com/Jivai/">Jivai</a> and <a href="http://tindzk.github.com/Jivai-Utils/">Jivai-Utils</a> installed. Then, execute: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		git clone git://github.com/tindzk/tplgen.git
 		cd tplgen; ./build.sh]]></script>
 
 		<h2><a href="#Generation" name="Generation">Generation</a></h2>
 
-		By default, tplgen will implement a generic interface. This is useful for maintaining multiple themes or output formats. The interface is a structure called  only containing function pointers. It may look like:  You also need to declare a structure for each template which contains its global members. Assumed you want to create a template for the default theme, you have to call tplgen like this:  If you ensure that each theme directory contains the same file names, you can shorten the command to:      <span class="keyword">TemplateInterface</span><script type="syntaxhighlighter" class="brush: c"><![CDATA[		typedef struct {
+		By default, tplgen will implement a generic interface. This is useful for maintaining multiple themes or output formats. The interface is a structure called <span class="keyword">TemplateInterface</span> only containing function pointers. It may look like: <script type="syntaxhighlighter" class="brush: c"><![CDATA[		typedef struct {
 			void (*main)   (MainTemplate    *, String *);
 			void (*article)(ArticleTemplate *, String *);
 			void (*listing)(ListingTemplate *, String *);
-		} TemplateInterface;]]></script><script type="syntaxhighlighter" class="brush: shell"><![CDATA[		../tplgen/tplgen.bin                     \
+		} TemplateInterface;]]></script> You also need to declare a structure for each template which contains its global members. Assumed you want to create a template for the default theme, you have to call tplgen like this: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		../tplgen/tplgen.bin                     \
 			name=Default                         \
 			add=Main:tpl/Default/Main.html       \
 			add=Article:tpl/Default/Article.html \
 			add=Listing:tpl/Default/Listing.html \
-			out=src/Templates/Default.c]]></script><script type="syntaxhighlighter" class="brush: shell"><![CDATA[		../tplgen/tplgen.bin \
+			out=src/Templates/Default.c]]></script> If you ensure that each theme directory contains the same file names, you can shorten the command to: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		../tplgen/tplgen.bin \
 			name=Default     \
 			dir=tpl/Default  \
 			ext=.html        \
-			out=src/Templates/Default]]></script><p class="warning">
+			out=src/Templates/Default]]></script> <p class="warning">
 
-		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.</p>
+		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.</p>    
 
 		<h3>Creating the Header</h3>
 
@@ -60,21 +60,21 @@
 
 		You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. </p></p><h3>Templates with Interface</h3>
 
-			  <p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p><script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import "TemplateInterface.h"
+			<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import "TemplateInterface.h"
 
-			TemplateInterface Templates_Default;]]></script><p class="note">
+			TemplateInterface Templates_Default;]]></script> <p class="note">
 
 		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.</p><h3>Templates without Interface</h3>
 
-			  <p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p><ul><li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li></ul><p>Rather than accessing the template structure, you can now access the functions directly. </p><h3>See also</h3>
+			<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul><li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li></ul> <p>Rather than accessing the template structure, you can now access the functions directly. </p><h3>See also</h3>
 
-			Also see the  directory for a simple application which doesn&#039;t use interfaces.<span class="path">examples</span><h2><a href="#Performance" name="Performance">Performance</a></h2>
+			Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#Performance" name="Performance">Performance</a></h2>
 
-		If the template&#039;s length is not predictable, you shouldn&#039;t disable . Otherwise, the generation will result in many slow reallocations of the output string.<span class="keyword">String_SmartAlign</span>
+		If the template&#039;s length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string.
 
 		<h2><a href="#License" name="License">License</a></h2>
 
-		   <p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p><p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p><p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p><p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
+		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
