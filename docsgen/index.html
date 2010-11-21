@@ -36,7 +36,11 @@
 
 		<h3>Requirements</h3>
 
-			For tplgen to compile, make sure to have these prerequisites installed: <ul><li>Jivai</li><li>Jivai-Utils</li><li>tplgen</li></ul><h3>Checkout</h3>
+			For tplgen to compile, make sure to have these prerequisites installed: <ul>
+
+		<li>Jivai</li><li>Jivai-Utils</li><li>tplgen</li>
+
+		</ul><h3>Checkout</h3>
 
 			<script type="syntaxhighlighter" class="brush: shell"><![CDATA[			git clone git://github.com/docsgen/docslib.git
 			git clone git://github.com/docsgen/docsgen.git]]></script><h3>Compile</h3>
@@ -57,13 +61,21 @@
 
 			Like <a href="#">meta</a>, <span class="keyword">chapter</span> is another top-level command. Chapter are automatically added to the table of contents. Sometimes it&#039;s desired to subdivide the contents of a chapter. Therefore, chapters may also contain sections (<span class="keyword">.section{...}</span>). However, the generated table of contents won&#039;t cover any links to sections.<h3>Style</h3>
 
-			The following styles are supported: <ul><li>b (<b>bold</b>)</li><li>i (<i>italic</i>)</li><li>class (<span class="class">ClassName</span>)</li><li>func (<span class="function">main</span>)</li><li>var (<span class="variable">var</span>)</li><li>macro (<span class="macro">macro</span>)</li><li>term (<span class="term">1 + 2</span>)</li><li>keyword (<span class="keyword">docsgen</span>)</li><li>path (<span class="path">/root</span>)</li><li>number (<span class="number">8080</span>)</li></ul> Styles only format the given text, i.e. they don&#039;t require any options.<h3>Blocks</h3>
+			The following styles are supported: <ul>
+
+		<li>b (<b>bold</b>)</li><li>i (<i>italic</i>)</li><li>class (<span class="class">ClassName</span>)</li><li>func (<span class="function">main</span>)</li><li>var (<span class="variable">var</span>)</li><li>macro (<span class="macro">macro</span>)</li><li>term (<span class="term">1 + 2</span>)</li><li>keyword (<span class="keyword">docsgen</span>)</li><li>path (<span class="path">/root</span>)</li><li>number (<span class="number">8080</span>)</li>
+
+		</ul> Styles only format the given text, i.e. they don&#039;t require any options.<h3>Blocks</h3>
 
 			docsgen supports <span class="keyword">blocks</span>. Their purpose is to inline texts. Notes (<span class="keyword">note</span>) and warnings (<span class="keyword">warning</span>) are supported: <p class="note">
 
-		Note block </p> <p class="warning">
+		Note block 
 
-		Warning block </p><h3>Lists</h3>
+		</p> <p class="warning">
+
+		Warning block 
+
+		</p><h3>Lists</h3>
 
 			A list is initialized using the <span class="keyword">list</span> command. Within a list, there cannot be other elements than <span class="keyword">item</span>s: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.list {
 				.item{Item 1}
@@ -72,7 +84,11 @@
 
 			docsgen does not detect paragraphs automatically. To force a paragraph, the corresponding text needs to be surrounded by a <span class="keyword">p</span> command.<h3>Syntax highlighting</h3>
 
-			docsgen supports highlighting of code and shell commands: <ul><li>command: Shell command(s)</li><li>code: C, C++ code</li></ul> For example, this <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.command {
+			docsgen supports highlighting of code and shell commands: <ul>
+
+		<li>command: Shell command(s)</li><li>code: C, C++ code</li>
+
+		</ul> For example, this <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.command {
 				ls -lah
 			}
 
@@ -86,7 +102,11 @@
 
 			Anchors are invisible markers which can be set throughout the whole document and jumped to. An anchor needs to be initialized using the <span class="keyword">anchor</span> command. <a name="jump"></a> A link pointing to an anchor can be generated using <span class="keyword">jump</span>.<h3>Links</h3>
 
-			The following types of links are supported: <ul><li><i>mail</i>: E-mail address (<a href="mailto:user@example.com">user@example.com</a>)</li><li><i>url</i>: URL (<a href="http://www.example.com/">example.com</a>)</li></ul> The usage of a link is similar to an <a href="#jump">anchor jumpers&#039;</a>: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.url[http://www.google.com/\]{Google}
+			The following types of links are supported: <ul>
+
+		<li><i>mail</i>: E-mail address (<a href="mailto:user@example.com">user@example.com</a>)</li><li><i>url</i>: URL (<a href="http://www.example.com/">example.com</a>)</li>
+
+		</ul> The usage of a link is similar to an <a href="#jump">anchor jumpers&#039;</a>: <script type="syntaxhighlighter" class="brush: c"><![CDATA[			.url[http://www.google.com/\]{Google}
 			.url[john@example.com]{John Smith}]]></script><h2><a href="#Example" name="Example">Example</a></h2>
 
 		A sample document may look like: <script type="syntaxhighlighter" class="brush: c"><![CDATA[		.meta {
@@ -109,7 +129,11 @@
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul><li><a href="Browse source">http://github.com/tindzk/docsgen</a></li><li><a href="GitHub account">http://github.com/tindzk</a></li></ul>
+		<ul>
+
+		<li><a href="Browse source">http://github.com/tindzk/docsgen</a></li><li><a href="GitHub account">http://github.com/tindzk</a></li>
+
+		</ul>
 
 		<h2><a href="#Donate" name="Donate">Donate</a></h2>
 

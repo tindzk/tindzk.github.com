@@ -52,21 +52,31 @@
 			ext=.html        \
 			out=src/Templates/Default]]></script> <p class="warning">
 
-		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.</p>    
+		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.
+
+		</p>    
 
 		<h3>Creating the Header</h3>
 
 			<p>Although tplgen already creates a header file automatically, each template requires a structure containing its member variables. This is usually done in the file <span class="path">&lt;TemplateName&gt;.private.h</span> which is imported by <span class="path">&lt;TemplateName&gt;.h</span>. <p class="note">
 
-		You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. </p></p><h3>Templates with Interface</h3>
+		You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. 
+
+		</p></p><h3>Templates with Interface</h3>
 
 			<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import &quot;TemplateInterface.h&quot;
 
 			TemplateInterface Templates_Default;]]></script> <p class="note">
 
-		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.</p><h3>Templates without Interface</h3>
+		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.
 
-			<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul><li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li></ul> <p>Rather than accessing the template structure, you can now access the functions directly. </p><h3>See also</h3>
+		</p><h3>Templates without Interface</h3>
+
+			<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul>
+
+		<li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li>
+
+		</ul> <p>Rather than accessing the template structure, you can now access the functions directly. </p><h3>See also</h3>
 
 			Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#Performance" name="Performance">Performance</a></h2>
 
@@ -78,7 +88,11 @@
 
 		<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul><li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li></ul>
+		<ul>
+
+		<li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
+
+		</ul>
 
 		<h2><a href="#Contact" name="Contact">Contact</a></h2>
 

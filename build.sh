@@ -2,7 +2,7 @@
 
 BASE=..
 
-cp ../docsgen/tpl/style.css style.css
+cp ../docsgen/Templates/style.css style.css
 
 ../docsgen/docsgen.bin ../podfm/manual.tyo        $BASE > podfm/index.html
 ../docsgen/docsgen.bin ../Jivai/manual.tyo        $BASE > Jivai/index.html
