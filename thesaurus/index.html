@@ -1,562 +1,552 @@
-<head>
-	<title>The programmer&#039;s thesaurus</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>The programmer&#039;s thesaurus</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="../style.css" rel="stylesheet" type="text/css" />
+	</head>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<body>
+		<h1>The programmer&#039;s thesaurus</h1>
 
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/XRegExp.js"></script>
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCpp.js"></script>
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushBash.js"></script>
+		<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+		<ul>
+			<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Variable, Property and Attribute names">Variable, Property and Attribute names</a><br /></li><li><a href="#Function names">Function names</a><br /></li><li><a href="#Class names">Class names</a><br /></li><li><a href="#Example: Car rental company">Example: Car rental company</a><br /></li><li><a href="#States">States</a><br /></li><li><a href="#Roles">Roles</a><br /></li><li><a href="#VCS commit messages">VCS commit messages</a><br /></li><li><a href="#Logging levels">Logging levels</a><br /></li><li><a href="#Abbreviations">Abbreviations</a><br /></li><li><a href="#Credits">Credits</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Donate">Donate</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		</ul>
 
-	<link href="../syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
-	<link href="../syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-	<script type="text/javascript">
-		 SyntaxHighlighter.all()
-	</script>
+			<p>In computer-related areas, the English language offers a broad vocabulary. Therefore, naming functions and methods can be a difficult task. This document aims to be a comprehensive reference which will help you finding the most appropriate word in all situations. </p> <p>If you want to contribute, I&#039;d be happy to include your changes. You can find my e-mail address at the bottom of this document. Alternatively, you can fork it on <a href="http://github.com/tindzk/thesaurus">GitHub</a> and then send a pull request.</p>
 
-	<link href="../style.css" rel="stylesheet" type="text/css" />
-</head>
+			<h2><a href="#Variable, Property and Attribute names" name="Variable, Property and Attribute names">Variable, Property and Attribute names</a></h2>
 
-<body>
-	<h1>The programmer&#039;s thesaurus</h1>
+			                      
 
-	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
-	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Variable, Property and Attribute names">Variable, Property and Attribute names</a><br /></li><li><a href="#Function names">Function names</a><br /></li><li><a href="#Class names">Class names</a><br /></li><li><a href="#Example: Car rental company">Example: Car rental company</a><br /></li><li><a href="#States">States</a><br /></li><li><a href="#Roles">Roles</a><br /></li><li><a href="#VCS commit messages">VCS commit messages</a><br /></li><li><a href="#Logging levels">Logging levels</a><br /></li><li><a href="#Abbreviations">Abbreviations</a><br /></li><li><a href="#Credits">Credits</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Donate">Donate</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
-	</ul>
+			<h3>Object-Orientation</h3>
 
-	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
-
-		<p>In computer-related areas, the English language offers a broad vocabulary. Therefore, naming functions and methods can be a difficult task. This document aims to be a comprehensive reference which will help you finding the most appropriate word in all situations. </p> <p>If you want to contribute, I&#039;d be happy to include your changes. You can find my e-mail address at the bottom of this document. Alternatively, you can fork it on <a href="http://github.com/tindzk/thesaurus">GitHub</a> and then send a pull request.</p>
-
-		<h2><a href="#Variable, Property and Attribute names" name="Variable, Property and Attribute names">Variable, Property and Attribute names</a></h2>
-
-		                      
-
-		<h3>Object-Orientation</h3>
-
-			<ul>
+				<ul>
 
 		<li>action</li><li>arg, argument</li><li>attr, attribute</li><li>class</li><li>context</li><li>hidden</li><li>ident, identifier</li><li>inst, instance</li><li>itf, interface</li><li>memb, member</li><li>meth, method</li><li>mod, module</li><li>obj, object</li><li>param, parameter</li><li>priv, private</li><li>prop, property</li><li>protected</li><li>public</li><li>published</li><li>res, resource</li><li>routine</li><li>self</li><li>shared</li><li>this</li><li>var, variable</li>
 
 		</ul><h3>Arrays</h3>
 
-			<ul>
+				<ul>
 
 		<li>elem, element</li><li>i, index</li><li>item</li><li>it, iter, iterator</li>
 
 		</ul><h3>Tables</h3>
 
-			<ul>
+				<ul>
 
 		<li>col, column</li><li>row</li>
 
 		</ul><h3>Date/Time</h3>
 
-			<ul>
+				<ul>
 
 		<li>d, day</li><li>date</li><li>h, hour</li><li>hrs, hours</li><li>m, min, minute</li><li>m, month</li><li>mins, minutes</li><li>time</li><li>y, year</li>
 
 		</ul><h3>Search</h3>
 
-			<ul>
+				<ul>
 
 		<li>needle</li><li>haystack</li><li>off, ofs, offset</li><li>pos, position</li><li>occurrence</li>
 
 		</ul><h3>Trees</h3>
 
-			<ul>
+				<ul>
 
 		<li>node</li><li>path</li>
 
 		</ul><h3>Tasks and Operations</h3>
 
-			<ul>
+				<ul>
 
 		<li>action</li><li>op, operation</li><li>routine</li><li>task</li><li>proc, process</li>
 
 		</ul><h3>Event handling</h3>
 
-			<ul>
+				<ul>
 
 		<li>cb, callback</li><li>context</li><li>hook</li><li>sender</li><li>sig, signal</li><li>subscr, subscriber</li>
 
 		</ul><h3>Networking</h3>
 
-			<ul>
+				<ul>
 
 		<li>host</li><li>ip</li><li>socket</li><li>conn, connection</li>
 
 		</ul><h3>Web development</h3>
 
-			<ul>
+				<ul>
 
 		<li>sess, session</li><li>cookie</li>
 
 		</ul><h3>User Interfaces</h3>
 
-			<ul>
+				<ul>
 
 		<li>caption</li><li>descr, description</li><li>headline</li><li>name</li><li>pg, page</li><li>title</li>
 
 		</ul><h3>File</h3>
 
-			<ul>
+				<ul>
 
 		<li>directory</li><li>eof, endOfFile</li><li>file</li><li>io</li><li>path</li>
 
 		</ul><h3>Data types/structures</h3>
 
-			<ul>
+				<ul>
 
 		<li>buf, buffer</li><li>ptr, pointer</li><li>str, string</li>
 
 		</ul><h3>Links</h3>
 
-			<ul>
+				<ul>
 
 		<li>prev, next</li>
 
 		</ul><h3>Debugging and Error handling</h3>
 
-			<ul>
+				<ul>
 
 		<li>bug</li><li>crash</li><li>err, error, errno</li><li>exc, exception</li><li>failure</li><li>fix</li><li>prio, priority</li><li>st, status</li><li>tc, test case</li><li>tb, test bundle</li><li>ts, test suite</li>
 
 		</ul><h3>Messaging</h3>
 
-			<ul>
+				<ul>
 
 		<li>msg, message</li><li>req, request</li><li>resp, response</li>
 
 		</ul><h3>Return values</h3>
 
-			<ul>
+				<ul>
 
 		<li>out, output</li><li>res, result</li>
 
 		</ul><h3>Lines</h3>
 
-			<ul>
+				<ul>
 
 		<li>eol, endOfLine</li><li>bol, beginningOfLine</li>
 
 		</ul><h3>Positions and lengths</h3>
 
-			<ul>
+				<ul>
 
 		<li>off, offset</li><li>pos, position</li><li>size</li><li>cnt, count</li><li>len, length</li>
 
 		</ul><h3>Database</h3>
 
-			<ul>
+				<ul>
 
 		<li>cur, current</li><li>cur, cursor</li><li>db, database</li><li>qry, query</li><li>record</li>
 
 		</ul><h3>Time</h3>
 
-			<ul>
+				<ul>
 
 		<li>sec, s</li><li>msec</li><li>usec</li><li>time</li><li>diff, difference</li><li>tz, timezone</li>
 
 		</ul><h3>Characters and Strings</h3>
 
-			<ul>
+				<ul>
 
 		<li>s, str: string</li><li>c, ch: character</li><li>cstr: C string</li><li>sz: zero-terminated string</li><li>buf, buffer</li>
 
 		</ul><h3>General</h3>
 
-			<ul>
+				<ul>
 
 		<li>env, environment</li><li>val, value</li>
 
 		</ul><h2><a href="#Function names" name="Function names">Function names</a></h2>
 
-		                              
+			                              
 
-		<h3>Event handling</h3>
+			<h3>Event handling</h3>
 
-			<ul>
+				<ul>
 
 		<li>attach</li><li>bind</li><li>call</li><li>conn, connect</li><li>disconn, disconnect</li><li>emit</li><li>pass</li><li>subscribe</li><li>trigger</li><li>unsubscribe</li>
 
 		</ul><h3>Database</h3>
 
-			<ul>
+				<ul>
 
 		<li>commit</li><li>conn, connect</li><li>disconn, disconnect</li><li>populate</li><li>qry, query</li>
 
 		</ul><h3>ACL</h3>
 
-			<ul>
+				<ul>
 
 		<li>grant</li><li>deny</li>
 
 		</ul><h3>Test suites</h3>
 
-			<ul>
+				<ul>
 
 		<li>assert</li><li>expect</li>
 
 		</ul><h3>Serializing</h3>
 
-			<ul>
+				<ul>
 
 		<li>bundle</li><li>escape</li><li>obfuscate</li><li>sanitize</li><li>serialize</li><li>wrap, unwrap</li>
 
 		</ul><h3>Resizing</h3>
 
-			<ul>
+				<ul>
 
 		<li>enlarge</li><li>extend</li><li>grow</li><li>resize</li>
 
 		</ul><h3>Compression</h3>
 
-			<ul>
+				<ul>
 
 		<li>compress</li><li>minimize</li><li>shorten</li><li>shrink</li>
 
 		</ul><h3>Math</h3>
 
-			<ul>
+				<ul>
 
 		<li>rd, round</li><li>rnd, random, randomize</li>
 
 		</ul><h3>Strings</h3>
 
-			<ul>
+				<ul>
 
 		<li>bind</li><li>concat, concatenate</li><li>format</li><li>insert</li><li>resize</li><li>trim</li>
 
 		</ul><h3>Trees</h3>
 
-			<ul>
+				<ul>
 
 		<li>appendChild</li><li>collapse</li><li>createElement</li><li>getChildren</li><li>hasChildren</li><li>setAttribute</li>
 
 		</ul><h3>Templates</h3>
 
-			<ul>
+				<ul>
 
 		<li>assign</li><li>display</li><li>render</li>
 
 		</ul><h3>Garbage Collection</h3>
 
-			<ul>
+				<ul>
 
 		<li>alloc, allocate</li><li>free</li><li>new</li><li>release</li><li>retain</li>
 
 		</ul><h3>Networking</h3>
 
-			<ul>
+				<ul>
 
 		<li>accept</li><li>addHandler, e.g. addEventHandler</li><li>bind</li><li>download</li><li>handshake</li><li>listen</li><li>read</li><li>recv, receive</li><li>send, e.g. sendAuthRequest</li><li>upload</li><li>write</li>
 
 		</ul><h3>Tasks</h3>
 
-			<ul>
+				<ul>
 
 		<li>exec, execute</li><li>handle</li><li>hold</li><li>process</li><li>request</li><li>respond</li><li>restart</li><li>run</li><li>start</li><li>stop</li><li>suspend</li>
 
 		</ul><h3>Receiving</h3>
 
-			<ul>
+				<ul>
 
 		<li>fetch</li><li>get, e.g getName, getById</li><li>grab</li><li>obtain</li><li>read</li><li>recv, receive</li><li>request</li><li>retrieve</li>
 
 		</ul><h3>Transmitting</h3>
 
-			<ul>
+				<ul>
 
 		<li>send</li><li>transmit</li><li>transfer</li>
 
 		</ul><h3>Iterating</h3>
 
-			<ul>
+				<ul>
 
 		<li>getIter, getIterator</li><li>iter, iterate</li><li>key</li><li>map</li><li>next</li><li>prev</li><li>reduce</li><li>valid</li><li>value</li><li>walk</li>
 
 		</ul><h3>Checking</h3>
 
-			<ul>
+				<ul>
 
 		<li>can</li><li>has</li><li>is</li>
 
 		</ul><h3>Comparing</h3>
 
-			<ul>
+				<ul>
 
 		<li>cmp, compare</li><li>contains</li><li>diff</li><li>eq, equals, isEqual</li>
 
 		</ul><h3>Streams</h3>
 
-			<ul>
+				<ul>
 
 		<li>rewind</li><li>tell</li><li>peek</li>
 
 		</ul><h3>File</h3>
 
-			<ul>
+				<ul>
 
 		<li>append</li><li>open</li><li>read</li><li>write</li>
 
 		</ul><h3>Construction</h3>
 
-			<ul>
+				<ul>
 
 		<li>alloc, allocate</li><li>bootstrap</li><li>build</li><li>constr, construct</li><li>create</li><li>ctor, constructor</li><li>decl, declare</li><li>init, initialize</li><li>install</li><li>load, e.g. loadFile</li><li>make</li><li>new</li>
 
 		</ul><h3>Destruction</h3>
 
-			<ul>
+				<ul>
 
 		<li>cleanup</li><li>clean</li><li>clear</li><li>close</li><li>del, delete</li><li>destroy</li><li>destruct</li><li>drop</li><li>dtor, destructor</li><li>erase</li><li>free</li><li>purge</li><li>rem, remove</li><li>term, terminate</li><li>uninstall</li><li>unlink</li><li>wipe</li>
 
 		</ul><h3>Updating</h3>
 
-			<ul>
+				<ul>
 
 		<li>upd, update</li><li>upgr, upgrade</li><li>refr, refresh</li><li>touch (updates timestamp to match current time)</li>
 
 		</ul><h3>Merging</h3>
 
-			<ul>
+				<ul>
 
 		<li>apply</li><li>combine</li><li>concat, concatenate</li><li>merge</li>
 
 		</ul><h3>Duplication</h3>
 
-			<ul>
+				<ul>
 
 		<li>cpy, copy</li><li>clone</li><li>dup, duplicate</li>
 
 		</ul><h3>Assigning</h3>
 
-			<ul>
+				<ul>
 
 		<li>assign</li><li>set</li>
 
 		</ul><h3>Output</h3>
 
-			<ul>
+				<ul>
 
 		<li>pr, print</li><li>echo</li><li>write</li><li>disp, display</li>
 
 		</ul><h3>Search</h3>
 
-			<ul>
+				<ul>
 
 		<li>extract</li><li>filter</li><li>find, e.g. findRoute, rfind, reverseFind</li><li>match</li><li>read</li><li>scan</li><li>search</li><li>seek</li>
 
 		</ul><h3>Error handling</h3>
 
-			<ul>
+				<ul>
 
 		<li>assert</li><li>catch</li><li>debug</li><li>except</li><li>expect</li><li>getCode</li><li>getFile</li><li>getLine</li><li>getMessage</li><li>getTrace</li><li>throw</li><li>try</li>
 
 		</ul><h3>Storage</h3>
 
-			<ul>
+				<ul>
 
 		<li>read</li><li>save</li><li>store</li>
 
 		</ul><h2><a href="#Class names" name="Class names">Class names</a></h2>
 
-		<ul>
+			<ul>
 
 		<li>Abstract, e.g. AbstractManufacturer</li><li>Batch</li><li>Behavior</li><li>ConcreteFilter</li><li>Debugger</li><li>Decorator</li><li>Facade, e.g. PurchasingFacade</li><li>Facade</li><li>Factory</li><li>Figure</li><li>Filter</li><li>FrontController: addPreFilter, addPostFilter, handleRequest</li><li>Handler</li><li>Implementation</li><li>Instance</li><li>Interface</li><li>Listener</li><li>Manager</li><li>Operation</li><li>Processor</li><li>Provider</li><li>Proxy</li><li>Registry</li><li>Reporter</li><li>Service</li><li>Singleton</li><li>Storage</li><li>Utils</li>
 
 		</ul>    
 
-		<h3>Events</h3>
+			<h3>Events</h3>
 
-			<ul>
+				<ul>
 
 		<li>EventDispatcher</li><li>Observer</li>
 
 		</ul><h3>Collections</h3>
 
-			<ul>
+				<ul>
 
 		<li>Chain, e.g. FilterChain</li><li>Cluster</li><li>Collection</li><li>Container</li><li>Repository</li><li>Suite</li>
 
 		</ul><h3>Components</h3>
 
-			<ul>
+				<ul>
 
 		<li>Component</li><li>Kit</li><li>Module</li><li>Package</li>
 
 		</ul><h3>Interface names</h3>
 
-			<ul>
+				<ul>
 
 		<li>Iterator: current, key, next, rewind, valid</li><li>IteratorAggregate</li><li>Observable: attach, detach, notify</li><li>Processor</li>
 
 		</ul><h2><a href="#Example: Car rental company" name="Example: Car rental company">Example: Car rental company</a></h2>
 
-		   
+			   
 
-		<h3>Classes</h3>
+			<h3>Classes</h3>
 
-			<ul>
+				<ul>
 
 		<li>Vehicle</li><li>Customer</li><li>RentalAction</li>
 
 		</ul><h3>Methods</h3>
 
-			<ul>
+				<ul>
 
 		<li>isReturned</li><li>isVehicleAvailable</li><li>rentVehicle</li><li>sellVehicle</li><li>returnVehicle</li><li>startEngine</li><li>stopEngine</li>
 
 		</ul><h3>Variables</h3>
 
-			<ul>
+				<ul>
 
 		<li>returnDate</li><li>markVehicleReturned</li><li>rentalActions</li>
 
 		</ul><h3>Exceptions</h3>
 
-			<ul>
+				<ul>
 
 		<li>VehicleNotAvailableException</li><li>MileageLimitExceededException</li>
 
 		</ul><h2><a href="#States" name="States">States</a></h2>
 
-		<ul>
+			<ul>
 
 		<li>connecting</li><li>idling</li><li>initialising</li><li>lingering</li><li>processing</li><li>reading</li><li>waiting</li><li>writing</li>
 
 		</ul>
 
-		<h2><a href="#Roles" name="Roles">Roles</a></h2>
+			<h2><a href="#Roles" name="Roles">Roles</a></h2>
 
-		<ul>
+			<ul>
 
 		<li>Administrator</li><li>Author</li><li>Collaborator</li><li>Contributor</li><li>Editor</li><li>Guest</li><li>Manager</li><li>Member</li><li>Moderator</li><li>Publisher</li><li>Subscriber</li><li>User</li><li>Viewer</li>
 
 		</ul>
 
-		<h2><a href="#VCS commit messages" name="VCS commit messages">VCS commit messages</a></h2>
+			<h2><a href="#VCS commit messages" name="VCS commit messages">VCS commit messages</a></h2>
 
-		This chapter introduces some rules for commit messages and provides you with a few sample sentences which you can use in your own commits.     
+			This chapter introduces some rules for commit messages and provides you with a few sample sentences which you can use in your own commits.     
 
-		<h3>Rules</h3>
+			<h3>Rules</h3>
 
-			<p>First of all, it&#039;s advisable to generally use the present tense in the header in which you only give an abstract description of your changes. For consistency, terminate all header messages with a point. An exception is non-linguistic contents such as commands, e.g. <span class="keyword">s/needle/replace/</span></p> <p>In the body you should go into detail. If appropriate, may also want to give some background information. Unlike the header, it&#039;s valid to use the past tense in the body. </p> As for object-oriented projects, the general structure of the header is: <p><i>Module</i>: Message</p> When a commit affects multiple modules, you can enumerate them: <p><i>Module1, Module2</i>: Message</p> Alternatively, the enumeration may be omitted if there are too many.<h3>Deletion</h3>
+				<p>First of all, it&#039;s advisable to generally use the present tense in the header in which you only give an abstract description of your changes. For consistency, terminate all header messages with a point. An exception is non-linguistic contents such as commands, e.g. <span class="keyword">s/needle/replace/</span></p> <p>In the body you should go into detail. If appropriate, may also want to give some background information. Unlike the header, it&#039;s valid to use the past tense in the body. </p> As for object-oriented projects, the general structure of the header is: <p><i>Module</i>: Message</p> When a commit affects multiple modules, you can enumerate them: <p><i>Module1, Module2</i>: Message</p> Alternatively, the enumeration may be omitted if there are too many.<h3>Deletion</h3>
 
-			<ul>
+				<ul>
 
 		<li>Delete <i>X</i>.</li><li>Get rid of <i>X</i>.</li><li>Drop <i>X</i>. (e.g. <i>Drop support for X.</i>)</li>
 
 		</ul><h3>Bug fixing</h3>
 
-			<ul>
+				<ul>
 
 		<li>Fix <i>X</i>.</li><li>Fix bug.</li><li>Spotted with <i>X</i>. (e.g. Valgrind) <b>This should go into the description.</b></li>
 
 		</ul><h3>Replacing components</h3>
 
-			<ul>
+				<ul>
 
 		<li>Make use of <i>X</i>.</li><li>Merge <i>X</i> and <i>Y</i>.</li><li>Use <i>X</i> in favour of <i>Y</i>.</li><li>Use <i>X</i> instead of <i>Y</i>.</li>
 
 		</ul><h3>General changes</h3>
 
-			<ul>
+				<ul>
 
 		<li>Change <i>X</i>.</li><li>Cosmetic changes.</li><li>Enhance <i>X</i>.</li><li>Facilitate <i>X</i>.</li><li>Improve <i>X</i>.</li><li>Restore <i>X</i>. (e.g. <i>Restore old behaviour.</i>)</li><li>Revert <i>X</i>.</li><li>Revise <i>X</i>.</li><li>Rework <i>X</i>.</li><li>Synchronize with upstream changes.</li><li>Trivial change(s).</li>
 
 		</ul><h2><a href="#Logging levels" name="Logging levels">Logging levels</a></h2>
 
-		Sorted by severity. <ul>
+			Sorted by severity. <ul>
 
 		<li>Trace</li><li>Debug</li><li>Informational</li><li>Warning</li><li>Error</li><li>Critical</li><li>Fatal</li>
 
 		</ul>
 
-		<h2><a href="#Abbreviations" name="Abbreviations">Abbreviations</a></h2>
+			<h2><a href="#Abbreviations" name="Abbreviations">Abbreviations</a></h2>
 
-		Each language has a certain number of words which appears to be specific to it. This chapter collects unique technical vocabulary grouped by the language it primarily occurs in. The purpose is to help you discovering interesting concepts and to give you some inspiration for making up your own ingenious class, variable and function names.        
+			Each language has a certain number of words which appears to be specific to it. This chapter collects unique technical vocabulary grouped by the language it primarily occurs in. The purpose is to help you discovering interesting concepts and to give you some inspiration for making up your own ingenious class, variable and function names.        
 
-		<h3>PHP</h3>
+			<h3>PHP</h3>
 
-			<ul>
+				<ul>
 
 		<li>__autoload</li><li>__construct</li><li>__unset</li><li>trim</li><li>implode</li><li>explode</li><li>needle</li><li>haystack</li>
 
 		</ul><h3>C</h3>
 
-			<ul>
+				<ul>
 
 		<li>strcmp, sometimes: streq</li><li>argv, argc</li><li>strlen</li><li>strcpy</li><li>strdup</li>
 
 		</ul><h3>C++</h3>
 
-			<ul>
+				<ul>
 
 		<li>ctor</li><li>dtor</li><li>cstr</li>
 
 		</ul><h3>Python</h3>
 
-			<ul>
+				<ul>
 
 		<li>__init__</li><li>__new__</li>
 
 		</ul><h3>Haskell</h3>
 
-			<ul>
+				<ul>
 
 		<li>newtype</li>
 
 		</ul><h3>Lua</h3>
 
-			<ul>
+				<ul>
 
 		<li>pairs, ipairs</li><li>tonumber</li>
 
 		</ul><h3>Ruby</h3>
 
-			<ul>
+				<ul>
 
 		<li>puts</li><li>upcase</li><li>times</li>
 
 		</ul><h3>Java</h3>
 
-			<ul>
+				<ul>
 
 		<li>bean</li><li>servlet</li><li>datasource</li>
 
 		</ul><h2><a href="#Credits" name="Credits">Credits</a></h2>
 
-		Most OO-related terms were taken from the book &quot;PHP Design Patterns&quot; by Stephan Schmidt. 
+			Most OO-related terms were taken from the book &quot;PHP Design Patterns&quot; by Stephan Schmidt. 
 
-		<h3>Contributions</h3>
+			<h3>Contributions</h3>
 
-			<ul>
+				<ul>
 
 		<li>Zachary Halbrecht</li>
 
 		</ul><h2><a href="#License" name="License">License</a></h2>
 
-		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
+			<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
-		<h2><a href="#See also" name="See also">See also</a></h2>
+			<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul>
+			<ul>
 
 		<li><a href="http://github.com/tindzk/thesaurus/blob/master/thesaurus.tyo">View source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
 
 		</ul>
 
-		<h2><a href="#Donate" name="Donate">Donate</a></h2>
+			<h2><a href="#Donate" name="Donate">Donate</a></h2>
 
-		<a href="http://flattr.com/thing/79136/The-programmers-thesaurus"><img src="http://api.flattr.com/button/button-compact-static-100x17.png" /></a>
+			<a href="http://flattr.com/thing/79136/The-programmers-thesaurus"><img src="http://api.flattr.com/button/button-compact-static-100x17.png" /></a>
 
-		<h2><a href="#Contact" name="Contact">Contact</a></h2>
+			<h2><a href="#Contact" name="Contact">Contact</a></h2>
 
-		<a href="mailto:tim.nieradzik@gmx.de">Tim Nieradzik</a>
+			<a href="mailto:tim.nieradzik@gmx.de">Tim Nieradzik</a>
 
-		
-</body>
+			
+	</body>
+</html>

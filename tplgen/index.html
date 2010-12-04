@@ -1,102 +1,92 @@
-<head>
-	<title>tplgen: template generator</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>tplgen: template generator</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="../style.css" rel="stylesheet" type="text/css" />
+	</head>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<body>
+		<h1>tplgen: template generator</h1>
 
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/XRegExp.js"></script>
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCpp.js"></script>
-	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushBash.js"></script>
+		<h2><a href="#toc" name="toc">Table of Contents</a></h2>
+		<ul>
+			<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Generation">Generation</a><br /></li><li><a href="#Performance">Performance</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
+		</ul>
 
-	<link href="../syntaxhighlighter/styles/shCore.css"         rel="stylesheet" type="text/css" />
-	<link href="../syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
 
-	<script type="text/javascript">
-		 SyntaxHighlighter.all()
-	</script>
+			<i>tplgen</i> is a lightweight template system. It can be used to create interactive websites written in C. tplgen doesn&#039;t require complex configuration. All options are passed via command line parameters. Templates are written in a simple markup. tplgen compiles them to valid C code. Templates can contain variables, loops, comparisons and even sub-routines. It&#039;s also possible to nest templates and to call any function which are defined somewhere else in the code.
 
-	<link href="../style.css" rel="stylesheet" type="text/css" />
-</head>
+			<h2><a href="#Installation" name="Installation">Installation</a></h2>
 
-<body>
-	<h1>tplgen: template generator</h1>
+			First make sure you have <a href="http://tindzk.github.com/Jivai/">Jivai</a> and <a href="http://tindzk.github.com/Jivai-Utils/">Jivai-Utils</a> installed. Then, execute: <pre class="code">git clone git://github.com/tindzk/tplgen.git
+cd tplgen; ./build.sh</pre>
 
-	<h2><a href="#toc" name="toc">Table of Contents</a></h2>
-	<ul>
-		<li><a href="#Introduction">Introduction</a><br /></li><li><a href="#Installation">Installation</a><br /></li><li><a href="#Generation">Generation</a><br /></li><li><a href="#Performance">Performance</a><br /></li><li><a href="#License">License</a><br /></li><li><a href="#See also">See also</a><br /></li><li><a href="#Contact">Contact</a><br /></li>
-	</ul>
+			<h2><a href="#Generation" name="Generation">Generation</a></h2>
 
-	<h2><a href="#Introduction" name="Introduction">Introduction</a></h2>
-
-		<i>tplgen</i> is a lightweight template system. It can be used to create interactive websites written in C. tplgen doesn&#039;t require complex configuration. All options are passed via command line parameters. Templates are written in a simple markup. tplgen compiles them to valid C code. Templates can contain variables, loops, comparisons and even sub-routines. It&#039;s also possible to nest templates and to call any function which are defined somewhere else in the code.
-
-		<h2><a href="#Installation" name="Installation">Installation</a></h2>
-
-		First make sure you have <a href="http://tindzk.github.com/Jivai/">Jivai</a> and <a href="http://tindzk.github.com/Jivai-Utils/">Jivai-Utils</a> installed. Then, execute: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		git clone git://github.com/tindzk/tplgen.git
-		cd tplgen; ./build.sh]]></script>
-
-		<h2><a href="#Generation" name="Generation">Generation</a></h2>
-
-		By default, tplgen will implement a generic interface. This is useful for maintaining multiple themes or output formats. The interface is a structure called <span class="keyword">TemplateInterface</span> only containing function pointers. It may look like: <script type="syntaxhighlighter" class="brush: c"><![CDATA[		typedef struct {
-			void (*main)   (MainTemplate    *, String *);
-			void (*article)(ArticleTemplate *, String *);
-			void (*listing)(ListingTemplate *, String *);
-		} TemplateInterface;]]></script> You also need to declare a structure for each template which contains its global members. Assumed you want to create a template for the default theme, you have to call tplgen like this: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		../tplgen/tplgen.bin                     \
-			name=Default                         \
-			add=Main:tpl/Default/Main.html       \
-			add=Article:tpl/Default/Article.html \
-			add=Listing:tpl/Default/Listing.html \
-			out=src/Templates/Default.c]]></script> If you ensure that each theme directory contains the same file names, you can shorten the command to: <script type="syntaxhighlighter" class="brush: shell"><![CDATA[		../tplgen/tplgen.bin \
-			name=Default     \
-			dir=tpl/Default  \
-			ext=.html        \
-			out=src/Templates/Default]]></script> <p class="warning">
+			By default, tplgen will implement a generic interface. This is useful for maintaining multiple themes or output formats. The interface is a structure called <span class="keyword">TemplateInterface</span> only containing function pointers. It may look like: <pre class="code">typedef struct {
+    void (*main)   (MainTemplate    *, String *);
+    void (*article)(ArticleTemplate *, String *);
+    void (*listing)(ListingTemplate *, String *);
+} TemplateInterface;</pre> You also need to declare a structure for each template which contains its global members. Assumed you want to create a template for the default theme, you have to call tplgen like this: <pre class="code">../tplgen/tplgen.bin                     \
+    name=Default                         \
+    add=Main:tpl/Default/Main.html       \
+    add=Article:tpl/Default/Article.html \
+    add=Listing:tpl/Default/Listing.html \
+    out=src/Templates/Default.c</pre> If you ensure that each theme directory contains the same file names, you can shorten the command to: <pre class="code">../tplgen/tplgen.bin \
+    name=Default     \
+    dir=tpl/Default  \
+    ext=.html        \
+    out=src/Templates/Default</pre> <p class="warning">
 
 		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.
 
 		</p>    
 
-		<h3>Creating the Header</h3>
+			<h3>Creating the Header</h3>
 
-			<p>Although tplgen already creates a header file automatically, each template requires a structure containing its member variables. This is usually done in the file <span class="path">&lt;TemplateName&gt;.private.h</span> which is imported by <span class="path">&lt;TemplateName&gt;.h</span>. <p class="note">
+				<p>Although tplgen already creates a header file automatically, each template requires a structure containing its member variables. This is usually done in the file <span class="path">&lt;TemplateName&gt;.private.h</span> which is imported by <span class="path">&lt;TemplateName&gt;.h</span>. <p class="note">
 
 		You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. 
 
 		</p></p><h3>Templates with Interface</h3>
 
-			<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <script type="syntaxhighlighter" class="brush: c"><![CDATA[			#import &quot;TemplateInterface.h&quot;
+				<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <pre class="code">#import &quot;TemplateInterface.h&quot;
 
-			TemplateInterface Templates_Default;]]></script> <p class="note">
+TemplateInterface Templates_Default;</pre> <p class="note">
 
 		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.
 
 		</p><h3>Templates without Interface</h3>
 
-			<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul>
+				<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul>
 
 		<li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li>
 
 		</ul> <p>Rather than accessing the template structure, you can now access the functions directly. </p><h3>See also</h3>
 
-			Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#Performance" name="Performance">Performance</a></h2>
+				Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#Performance" name="Performance">Performance</a></h2>
 
-		If the template&#039;s length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string.
+			If the template&#039;s length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string.
 
-		<h2><a href="#License" name="License">License</a></h2>
+			<h2><a href="#License" name="License">License</a></h2>
 
-		<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
+			<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
 
-		<h2><a href="#See also" name="See also">See also</a></h2>
+			<h2><a href="#See also" name="See also">See also</a></h2>
 
-		<ul>
+			<ul>
 
 		<li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
 
 		</ul>
 
-		<h2><a href="#Contact" name="Contact">Contact</a></h2>
+			<h2><a href="#Contact" name="Contact">Contact</a></h2>
 
-		<a href="mailto:tim.nieradzik@gmx.de">Tim Nieradzik</a>
+			<a href="mailto:tim.nieradzik@gmx.de">Tim Nieradzik</a>
 
-		
-</body>
+			
+	</body>
+</html>
