@@ -84,7 +84,7 @@
 
 					<ul>
 
-		<li>block</li><li>bundle</li><li>entity</li><li>session</li><li>transaction</li>
+		<li>block</li><li>bundle</li><li>context</li><li>entity</li><li>group</li><li>session</li><li>transaction</li>
 
 		</ul><h3><a href="#ch2.11" name="ch2.11">2.11 Event handling</a></h3>
 
@@ -96,13 +96,13 @@
 
 					<ul>
 
-		<li>addr, address</li><li>allocator</li><li>arena</li><li>buf, buffer</li><li>mem, memory</li><li>pool</li><li>ptr, pointer</li><li>refcnt, reference count</li><li>size</li>
+		<li>addr, address</li><li>allocator</li><li>arena</li><li>buf, buffer</li><li>chunk</li><li>context</li><li>mem, memory</li><li>pool</li><li>ptr, pointer</li><li>refcnt, reference count</li><li>segment</li><li>size</li>
 
 		</ul><h3><a href="#ch2.13" name="ch2.13">2.13 Networking</a></h3>
 
 					<ul>
 
-		<li>conn, connection</li><li>host</li><li>ip</li><li>payload</li><li>socket</li>
+		<li>chunk</li><li>conn, connection</li><li>host</li><li>ip</li><li>packet</li><li>payload</li><li>socket</li>
 
 		</ul><h3><a href="#ch2.14" name="ch2.14">2.14 Web development</a></h3>
 
@@ -202,7 +202,7 @@
 
 					<ul>
 
-		<li>attach</li><li>bind</li><li>call</li><li>conn, connect</li><li>disconn, disconnect</li><li>emit</li><li>pass</li><li>register</li><li>subscribe</li><li>trigger</li><li>unregister</li><li>unsubscribe</li>
+		<li>attach</li><li>bind</li><li>call</li><li>conn, connect</li><li>detach</li><li>disconn, disconnect</li><li>emit</li><li>notify</li><li>pass</li><li>register</li><li>restore</li><li>subscribe</li><li>trigger</li><li>unregister</li><li>unsubscribe</li>
 
 		</ul><h3><a href="#ch3.3" name="ch3.3">3.3 Database</a></h3>
 
@@ -256,7 +256,7 @@
 
 					<ul>
 
-		<li>bwd, backward</li><li>each, foreach</li><li>enum, enumerate</li><li>fwd, forward</li><li>iter, iterate</li><li>list</li><li>rev, reverse</li><li>rpt, repeat</li>
+		<li>add</li><li>bwd, backward</li><li>each, foreach</li><li>enum, enumerate</li><li>find</li><li>fwd, forward</li><li>iter, iterate</li><li>list</li><li>lookup</li><li>pop</li><li>push</li><li>remove</li><li>rev, reverse</li><li>rpt, repeat</li>
 
 		</ul><h3><a href="#ch3.12" name="ch3.12">3.12 Trees</a></h3>
 
@@ -274,7 +274,7 @@
 
 					<ul>
 
-		<li>alloc, allocate</li><li>dispose</li><li>free</li><li>new</li><li>ref, reference</li><li>release</li><li>retain</li><li>unref, unreference</li>
+		<li>alloc, allocate</li><li>dispose</li><li>free</li><li>link</li><li>new</li><li>ref, reference</li><li>relate</li><li>release</li><li>retain</li><li>steal</li><li>unlink</li><li>unref, unreference</li>
 
 		</ul><h3><a href="#ch3.15" name="ch3.15">3.15 Networking</a></h3>
 
@@ -298,7 +298,7 @@
 
 					<ul>
 
-		<li>fetch</li><li>get, e.g getName, getById</li><li>grab</li><li>obtain</li><li>read</li><li>recv, receive</li><li>request</li><li>retrieve</li>
+		<li>fetch</li><li>get, e.g getName, getById</li><li>grab</li><li>obtain</li><li>read</li><li>recv, receive</li><li>request</li><li>retr, retrieve</li>
 
 		</ul><h3><a href="#ch3.19" name="ch3.19">3.19 Transmission</a></h3>
 
@@ -316,7 +316,7 @@
 
 					<ul>
 
-		<li>getIter, getIterator</li><li>iter, iterate</li><li>key</li><li>map</li><li>next</li><li>prev</li><li>reduce</li><li>valid</li><li>value</li><li>walk</li>
+		<li>each, foreach</li><li>getIter, getIterator</li><li>iter, iterate</li><li>key</li><li>list</li><li>map</li><li>next</li><li>prev</li><li>reduce</li><li>valid</li><li>value</li><li>walk</li>
 
 		</ul><h3><a href="#ch3.22" name="ch3.22">3.22 Checking</a></h3>
 
@@ -340,7 +340,7 @@
 
 					<ul>
 
-		<li>append</li><li>open</li><li>read</li><li>write</li>
+		<li>append</li><li>lock</li><li>open</li><li>read</li><li>unlock</li><li>write</li>
 
 		</ul><h3><a href="#ch3.26" name="ch3.26">3.26 Construction</a></h3>
 
@@ -388,7 +388,7 @@
 
 					<ul>
 
-		<li>extract</li><li>filter</li><li>find, e.g. findRoute, rfind, reverseFind</li><li>match</li><li>read</li><li>scan</li><li>search</li><li>seek</li>
+		<li>extract</li><li>filter</li><li>find, e.g. findRoute, rfind, reverseFind</li><li>lookup</li><li>match</li><li>read</li><li>scan</li><li>search</li><li>seek</li>
 
 		</ul><h3><a href="#ch3.34" name="ch3.34">3.34 Error handling</a></h3>
 
