@@ -24,8 +24,8 @@
 
 				<h2><a href="#ch2" name="ch2">2 Installation</a></h2>
 
-				First make sure you have <a href="http://tindzk.github.com/Jivai/">Jivai</a> and <a href="http://tindzk.github.com/Jivai-Utils/">Jivai-Utils</a> installed. Then, execute: <pre class="code">git clone git://github.com/tindzk/tplgen.git
-cd tplgen; ./build.sh</pre>
+				First make sure you have <a href="../Jivai">Jivai</a> and <a href="../Depend">Depend</a> installed. Then, execute: <pre class="code">git clone git://github.com/tindzk/tplgen.git
+cd tplgen ; ./build.sh</pre>
 
 				<h2><a href="#ch3" name="ch3">3 Generation</a></h2>
 
@@ -58,7 +58,7 @@ cd tplgen; ./build.sh</pre>
 
 					<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <pre class="code">#import &quot;TemplateInterface.h&quot;
 
-TemplateInterface Templates_Default;</pre> <p class="note">
+extern TemplateInterface Templates_Default;</pre> <p class="note">
 
 		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.
 
@@ -72,25 +72,21 @@ TemplateInterface Templates_Default;</pre> <p class="note">
 
 					Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#ch4" name="ch4">4 Performance</a></h2>
 
-				If the template&#039;s length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string.
+				As the template&#039;s final length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string.
 
-				<h2><a href="#ch5" name="ch5">5 License</a></h2>
+				<h2><a href="#ch5" name="ch5">5 Appendix</a></h2>
 
-				<p>Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.</p> <p>You may obtain a copy of the Licence at: <a href="http://ec.europa.eu/idabc/eupl">http://ec.europa.eu/idabc/eupl </a></p> <p>Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </p> <p>See the Licence for the specific language governing permissions and limitations under the Licence. </p>
+				 
 
-				<h2><a href="#ch6" name="ch6">6 See also</a></h2>
+				<h3><a href="#ch5.1" name="ch5.1">5.1 License</a></h3>
 
-				<ul>
+					Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.<h3><a href="#ch5.2" name="ch5.2">5.2 See also</a></h3>
 
-		<li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk">GitHub account</a></li>
+					<ul>
+
+		<li><a href="http://github.com/tindzk/tplgen">Browse source</a></li><li><a href="http://github.com/tindzk/tplgen/issues">Bug tracker</a></li><li><a href="http://tindzk.github.com/">Other projects</a></li><li><a href="mailto:tim.nieradzik@gmx.de">Contact</a></li>
 
 		</ul>
-
-				<h2><a href="#ch7" name="ch7">7 Contact</a></h2>
-
-				<a href="mailto:tim.nieradzik@gmx.de">Tim Nieradzik</a>
-
-				
 
 			
 		</div>
