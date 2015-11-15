@@ -20,24 +20,24 @@
 
 			<h2><a href="#ch1" name="ch1">1 Introduction</a></h2>
 
-				<p><i>Depend</i> is a build system for C and C++. Its main strength is the fact that it resolves the dependencies automatically. It is different from GNU Autoconf as it eliminates the need for bootstrapping. In contrast to Autoconf, Depend is written in pure C and thus does not rely on any external applications. Consequently, it has a much better performance.</p> <p>Depend enables you to build whole applications utilising only one command. Unlike Autoconf, Depend does not require you to maintain a list of all source files. These are resolved automatically each time you run Depend. Even for large projects this takes less than a second. For this to work, your project needs to specify the dependencies properly (within the header files). However, it is still possible to add additional files or to completely revert to static file lists. </p> <p>Another feature of Depend is that Depend only recompiles the files which actually have been changed and those which depend on these changed files. This minimizes the time significantly needed by the subsequent compilation runs significantly. </p> <p>Besides compilation and linking, Depend can print the whole dependency tree of your project in a human-readable form. Depend also contains a prototype generator which you can pass a path to a source file and it will extract the prototypes in a way you can easily incorporate into your header file. </p> 
+				<i>Depend</i> is a build system for C and C++. Its main strength is the fact that it resolves the dependencies automatically. It is different from GNU Autoconf as it eliminates the need for bootstrapping. In contrast to Autoconf, Depend is written in pure C and thus does not rely on any external applications. Consequently, it has a much better performance.<p>Depend enables you to build whole applications utilising only one command. Unlike Autoconf, Depend does not require you to maintain a list of all source files. These are resolved automatically each time you run Depend. Even for large projects this takes less than a second. For this to work, your project needs to specify the dependencies properly (within the header files). However, it is still possible to add additional files or to completely revert to static file lists.</p><p>Another feature of Depend is that Depend only recompiles the files which actually have been changed and those which depend on these changed files. This minimizes the time significantly needed by the subsequent compilation runs significantly.</p><p>Besides compilation and linking, Depend can print the whole dependency tree of your project in a human-readable form. Depend also contains a prototype generator which you can pass a path to a source file and it will extract the prototypes in a way you can easily incorporate into your header file.</p>
 
 				<h3><a href="#ch1.1" name="ch1.1">1.1 Screenshot</a></h3>
 
 					<img src="screenshot.png" /><h2><a href="#ch2" name="ch2">2 Getting Started</a></h2>
 
-				     
+				
 
 				<h3><a href="#ch2.1" name="ch2.1">2.1 Requirements</a></h3>
 
-					Depend depends on <a href="../Jivai">Jivai</a>. Make sure that the Jivai repository is placed in the same directory as Depend.<h3><a href="#ch2.2" name="ch2.2">2.2 Installation</a></h3>
+					 Depend depends on <a href="../Jivai">Jivai</a>. Make sure that the Jivai repository is placed in the same directory as Depend. <h3><a href="#ch2.2" name="ch2.2">2.2 Installation</a></h3>
 
 					<pre class="code">$ git clone git://github.com/tindzk/Jivai.git
 $ git clone git://github.com/tindzk/Depend.git
 $ cd Depend
 $ make</pre><h3><a href="#ch2.3" name="ch2.3">2.3 Usage</a></h3>
 
-					<p>To demonstrate its usage, we will try to self-host Depend by using the <span class="keyword">make</span>-created binary. While <span class="path">Makefile</span> maintains a static list of all source files, Depend will allow us to resolve these automatically.</p> <pre class="code">$ mkdir -p build/Jivai
+					 To demonstrate its usage, we will try to self-host Depend by using the <span class="keyword">make</span>-created binary. While <span class="path">Makefile</span> maintains a static list of all source files, Depend will allow us to resolve these automatically.<pre class="code">$ mkdir -p build/Jivai
 $ ./Depend.bin                   \
     build                        \
     output=a.out                 \
@@ -51,17 +51,17 @@ $ ./Depend.bin                   \
     inclhdr=../Jivai/config.h    \
     link=@bfd</pre><h3><a href="#ch2.4" name="ch2.4">2.4 Manually adding files</a></h3>
 
-					If certain files were not covered by <span class="keyword">#include</span>s or <span class="keyword">#import</span>s, you can add manually add additional ones using the <span class="keyword">add</span> parameter. It also has rudimentary support for wildcards. For instance, <span class="keyword">add=src/Providers/*.c</span> will add all <span class="path">.c</span> files (and their dependencies) within <span class="path">src/Providers</span>.<h3><a href="#ch2.5" name="ch2.5">2.5 Performance</a></h3>
+					 If certain files were not covered by <span class="keyword">#include</span>s or <span class="keyword">#import</span>s, you can add manually add additional ones using the <span class="keyword">add</span> parameter. It also has rudimentary support for wildcards. For instance, <span class="keyword">add=src/Providers/*.c</span> will add all <span class="path">.c</span> files (and their dependencies) within <span class="path">src/Providers</span>. <h3><a href="#ch2.5" name="ch2.5">2.5 Performance</a></h3>
 
-					<p>In contrast to the shipped <span class="path">Makefile</span>, Debit will make sure it only compiles the files which are actually needed as it resolves the dependencies automatically. When a file changes, it will only recompile those files which depend on the changed one, ultimately rendering the build process much faster.</p> <p>The underlying mechanism is to compare the source file&#039;s last-modified date with the output file&#039;s. Therefore, you can simulate a file change by running: </p> <pre class="code">$ touch ../src/HTTP/Server.c</pre> <p>Now rerun the above <span class="path">Depend.bin</span> command. As you can see, only a subset of the initially built files get recompiled.</p><h3><a href="#ch2.6" name="ch2.6">2.6 Dependency tree</a></h3>
+					 In contrast to the shipped <span class="path">Makefile</span>, Debit will make sure it only compiles the files which are actually needed as it resolves the dependencies automatically. When a file changes, it will only recompile those files which depend on the changed one, ultimately rendering the build process much faster.<p>The underlying mechanism is to compare the source file&#039;s last-modified date with the output file&#039;s. Therefore, you can simulate a file change by running:<pre class="code">$ touch ../src/HTTP/Server.c</pre> Now rerun the above <span class="path">Depend.bin</span> command. As you can see, only a subset of the initially built files get recompiled. </p><h3><a href="#ch2.6" name="ch2.6">2.6 Dependency tree</a></h3>
 
-					<p>Sometimes it&#039;s useful to get an overview of your project&#039;s overall complexity. Depend supports printing the whole dependency tree. Just replace replace the <span class="keyword">build</span> with <span class="keyword">deptree</span> in the above command.</p><h2><a href="#ch3" name="ch3">3 Appendix</a></h2>
+					 Sometimes it&#039;s useful to get an overview of your project&#039;s overall complexity. Depend supports printing the whole dependency tree. Just replace replace the <span class="keyword">build</span> with <span class="keyword">deptree</span> in the above command. <h2><a href="#ch3" name="ch3">3 Appendix</a></h2>
 
-				 
+				
 
 				<h3><a href="#ch3.1" name="ch3.1">3.1 License</a></h3>
 
-					Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.<h3><a href="#ch3.2" name="ch3.2">3.2 See also</a></h3>
+					 Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence. <h3><a href="#ch3.2" name="ch3.2">3.2 See also</a></h3>
 
 					<ul>
 

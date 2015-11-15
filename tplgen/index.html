@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<title>tplgen</title>
-		
+		<meta name="author" content="Tim Nieradzik" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link href="../style.css" rel="stylesheet" type="text/css" />
 	</head>
@@ -14,73 +14,73 @@
 
 			<h1 class="subtitle">Template Generator</h1>
 
-			
+			<h2 class="author">Tim Nieradzik</h2>
 
 			
 
 			<h2><a href="#ch1" name="ch1">1 Introduction</a></h2>
 
-				<i>tplgen</i> is a lightweight template system. It can be used to create interactive websites written in C. tplgen doesn&#039;t require complex configuration. All options are passed via command line parameters. Templates are written in a simple markup. tplgen compiles them to valid C code. Templates can contain variables, loops, comparisons and even sub-routines. It&#039;s also possible to nest templates and to call any function which are defined somewhere else in the code.
+				<i>tplgen</i> is a lightweight template system. It can be used to create interactive websites written in C.<p>tplgen doesn&#039;t require complex configuration. All options are passed via command line parameters.</p><p>Templates are written in a simple markup. tplgen compiles them to valid C code.</p><p>Templates can contain variables, loops, comparisons and even sub-routines. It&#039;s also possible to nest templates and to call any function which are defined somewhere else in the code. </p>
 
 				<h2><a href="#ch2" name="ch2">2 Installation</a></h2>
 
-				First make sure you have <a href="../Jivai">Jivai</a> and <a href="../Depend">Depend</a> installed. Then, execute: <pre class="code">git clone git://github.com/tindzk/tplgen.git
-cd tplgen ; ./build.sh</pre>
+				 First make sure you have <a href="../Jivai">Jivai</a> and <a href="../Depend">Depend</a> installed. Then, execute:<pre class="code">git clone git://github.com/tindzk/tplgen.git
+cd tplgen ; ./Build.sh</pre>
 
 				<h2><a href="#ch3" name="ch3">3 Generation</a></h2>
 
-				By default, tplgen will implement a generic interface. This is useful for maintaining multiple themes or output formats. The interface is a structure called <span class="keyword">TemplateInterface</span> only containing function pointers. It may look like: <pre class="code">typedef struct {
+				 By default, tplgen will implement a generic interface. This is useful for maintaining multiple themes or output formats. The interface is a structure called <span class="keyword">TemplateInterface</span> only containing function pointers. It may look like:<pre class="code">typedef struct {
     void (*main)   (MainTemplate    *, String *);
     void (*article)(ArticleTemplate *, String *);
     void (*listing)(ListingTemplate *, String *);
-} TemplateInterface;</pre> You also need to declare a structure for each template which contains its global members. Assumed you want to create a template for the default theme, you have to call tplgen like this: <pre class="code">../tplgen/tplgen.bin                     \
+} TemplateInterface;</pre> You also need to declare a structure for each template which contains its global members.<p>Assumed you want to create a template for the default theme, you have to call tplgen like this:<pre class="code">../tplgen/tplgen.bin                     \
     name=Default                         \
     add=Main:tpl/Default/Main.html       \
     add=Article:tpl/Default/Article.html \
     add=Listing:tpl/Default/Listing.html \
-    out=src/Templates/Default.c</pre> If you ensure that each theme directory contains the same file names, you can shorten the command to: <pre class="code">../tplgen/tplgen.bin \
+    out=src/Templates/Default.c</pre> If you ensure that each theme directory contains the same file names, you can shorten the command to:<pre class="code">../tplgen/tplgen.bin \
     name=Default     \
     dir=tpl/Default  \
     ext=.html        \
-    out=src/Templates/Default</pre> <p class="warning">
+    out=src/Templates/Default</pre><p class="warning">
 
-		This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too.
+		 This command will include all <span class="path">.html</span> files in <span class="path">tpl/Default</span>. Temporarily created files should be moved into a subdirectory, otherwise tplgen tries to interpret them, too. 
 
-		</p>    
+		</p></p>
 
 				<h3><a href="#ch3.1" name="ch3.1">3.1 Creating the Header</a></h3>
 
-					<p>Although tplgen already creates a header file automatically, each template requires a structure containing its member variables. This is usually done in the file <span class="path">&lt;TemplateName&gt;.private.h</span> which is imported by <span class="path">&lt;TemplateName&gt;.h</span>. <p class="note">
+					 Although tplgen already creates a header file automatically, each template requires a structure containing its member variables. This is usually done in the file <span class="path">&lt;TemplateName&gt;.private.h</span> which is imported by <span class="path">&lt;TemplateName&gt;.h</span>.<p class="note">
 
-		You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. 
+		 You can also define static inline functions which are then usable in the template. One such example is an HTML escaping function. 
 
-		</p></p><h3><a href="#ch3.2" name="ch3.2">3.2 Templates with Interface</a></h3>
+		</p><h3><a href="#ch3.2" name="ch3.2">3.2 Templates with Interface</a></h3>
 
-					<p>Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like: </p> <pre class="code">#import &quot;TemplateInterface.h&quot;
+					 Since you will probably have more than one template, it&#039;s recommendable to put the template interface into a separate file and include it from all templates. A generic header file looks like:<pre class="code">#import &quot;TemplateInterface.h&quot;
 
-extern TemplateInterface Templates_Default;</pre> <p class="note">
+extern TemplateInterface Templates_Default;</pre><p class="note">
 
-		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case.
+		<span class="function">main()</span>, <span class="function">article()</span> and <span class="function">listing()</span> are defined for each template in the structure <span class="variable">Template_&lt;TemplateName&gt;</span>, i.e. <span class="variable">Templates_Default</span> in this case. 
 
 		</p><h3><a href="#ch3.3" name="ch3.3">3.3 Templates without Interface</a></h3>
 
-					<p>If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:</p> <ul>
+					 If having an interface is not desired, you can specify the parameter <span class="keyword">itf=no</span>. This will lead to a slightly different behaviour:<ul>
 
 		<li>TemplateInterface is <i>not</i> implemented.</li><li>All functions are <span class="keyword">public</span>.</li>
 
-		</ul> <p>Rather than accessing the template structure, you can now access the functions directly. </p><h3><a href="#ch3.4" name="ch3.4">3.4 See also</a></h3>
+		</ul> Rather than accessing the template structure, you can now access the functions directly. <h3><a href="#ch3.4" name="ch3.4">3.4 See also</a></h3>
 
-					Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces.<h2><a href="#ch4" name="ch4">4 Performance</a></h2>
+					 Also see the <span class="path">examples</span> directory for a simple application which doesn&#039;t use interfaces. <h2><a href="#ch4" name="ch4">4 Performance</a></h2>
 
-				As the template&#039;s final length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string.
+				 As the template&#039;s final length is not predictable, you shouldn&#039;t disable <span class="keyword">String_SmartAlign</span>. Otherwise, the generation will result in many slow reallocations of the output string. 
 
 				<h2><a href="#ch5" name="ch5">5 Appendix</a></h2>
 
-				 
+				
 
 				<h3><a href="#ch5.1" name="ch5.1">5.1 License</a></h3>
 
-					Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence.<h3><a href="#ch5.2" name="ch5.2">5.2 See also</a></h3>
+					 Licensed under the EUPL, Version 1.1 only (the <i>&quot;Licence&quot;</i>); You may not use this work except in compliance with the Licence. <h3><a href="#ch5.2" name="ch5.2">5.2 See also</a></h3>
 
 					<ul>
 
